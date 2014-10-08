@@ -3,7 +3,6 @@
 \alias{pam_k}
 \title{pam_k}
 \usage{
-pam_k(tdm)
 pam_k(tdm, sparsity = 0.98)
 }
 \arguments{

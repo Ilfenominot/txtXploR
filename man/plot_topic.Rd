@@ -3,8 +3,6 @@
 \alias{plot_topic}
 \title{plot_topic}
 \usage{
-plot_topic(tdm, date)
-plot_topic(tdm, date, topics = 5)
 plot_topic(tdm, date, topics = 5, terms = 4)
 }
 \arguments{

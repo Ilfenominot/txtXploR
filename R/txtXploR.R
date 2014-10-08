@@ -3,11 +3,6 @@
 #' @description
 #' Cleans corpus of documents.
 #' 
-#' @usage
-#' clean_corpus(corpus)
-#' clean_corpus(corpus, stem=FALSE)
-#' clean_corpus(corpus, stem=FALSE, rem_words="the")
-#' 
 #' @param corpus Required. Corpus of documents to clean.
 #' @param stem Optional, boolean. If TRUE stems documents after cleaning. Defaults to FALSE.
 #' @param rem_words Optional, additional words to remove from documents.
@@ -72,12 +67,6 @@ clean_corpus <- function(corpus, stem = FALSE, rem_words="the") {
 #' @description
 #' Hierarchical cluster analysis presented in dendrogram.
 #' 
-#' @usage
-#' hier_clust(tdm)
-#' hier_clust(tdm, sparsity = 0.98)
-#' hier_clust(tdm, sparsity = 0.98, method = "ward.D")
-#' hier_clust(tdm, clusters = 5, sparsity = 0.98, method = "ward.D")
-#' 
 #' @param tdm Required. Term-document matrix.
 #' @param clusters Optional. Number of clusters based on distance between terms, defaults to 5.
 #' @param sparsity Optional. Maximum allowed sparsity. Between 0 and 1, defaults to 0.98.
@@ -129,10 +118,6 @@ hier_clust <- function (tdm, clusters = 5, sparsity = 0.98, method = "ward.D") {
 #' 
 #' @description
 #' Like k-means, attempts to break dataset into groups and minimize distance between points.
-#' 
-#' @usage
-#' pam_k(tdm)
-#' pam_k(tdm, sparsity = 0.98)
 #' 
 #' @param tdm Required. object of class TermDocumentMatrix.
 #' @param sparsity Optional. Maximum allowed sparsity. Between 0 and 1, defaults to 0.98.
@@ -189,12 +174,6 @@ pam_k <- function(tdm, sparsity = 0.98) {
 #' 
 #' Models topics using Latent Dirichlet Allocation and plots against time using qplot.
 #' 
-#' @usage 
-#' 
-#' plot_topic(tdm, date)
-#' plot_topic(tdm, date, topics = 5)
-#' plot_topic(tdm, date, topics = 5, terms = 4)
-#' 
 #' @return Plots of topics over time (ggplot2)
 #' 
 #' @param tdm Required. term-document matri; must be of class "TermDocumentMatrix"
@@ -248,15 +227,6 @@ plot_topic <- function(tdm, date, topics = 5, terms = 4) {
 #' tag_cloud
 #' 
 #' @description creates word-cloud of most frequent terms in term-document matrix fed to the function
-#' 
-#' @usage
-#' 
-#' tag_cloud(tdm)
-#' tag_cloud(tdm, min_freq = 1)
-#' tag_cloud(tdm, min_freq = 1, scale = c(4, .5))
-#' tag_cloud(tdm, min_freq = 1, scale = c(4, .5), order = FALSE)
-#' tag_cloud(tdm, min_freq = 1, scale = c(4, .5), order = FALSE, colour = brewer.pal(8, 'Dark2'))
-#' 
 #' @param tdm Required. Term-document matrix
 #' @param min_freq Optional, defaults to 1. Minimum frequency of term for it to appear in Wordcloud
 #' @param scale Optional. A vector of length 2 indicating the range of the size of the words.
@@ -299,12 +269,6 @@ tag_cloud <- function(tdm, min_freq = 1, scale = c(4, .5), order = FALSE,
 #' 
 #' @description term frequency using tdm - barplot 
 #' 
-#' @usage
-#' 
-#' term_bar(tdm)
-#' term_bar(tdm, term_freq = 1)
-#' term_bar(tdm, term_freq = 1, colour = "heat")
-#' 
 #' @param tdm Required. Object of class TermDocumentMatrix.
 #' @param term_freq Optional, defaults to 1. Minimum frequency of terms to plot
 #' @param colour Optional, defaults to heat. Color to be used for bars.
@@ -344,12 +308,6 @@ term_bar <- function(tdm, term_freq = 1, colour = "heat") {
 #' 
 #' @description
 #' Creates netowrk of terms object (igraph) from term-document matrix
-#' 
-#' @usage
-#' term_network(tdm)
-#' term_network(tdm, sparsity = 0.98)
-#' term_network(tdm, sparsity = 0.98, weighted = TRUE)
-#' term_network(tdm, sparsity = 0.98, weighted = TRUE, graphml = FALSE)
 #' 
 #' @param tdm Required. Term-document matrix.
 #' @param sparsity Optional. Maximum allowed sparsity. Between 0 and 1, defaults to 0.97.

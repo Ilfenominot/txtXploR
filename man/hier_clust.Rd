@@ -3,9 +3,6 @@
 \alias{hier_clust}
 \title{hier_clust}
 \usage{
-hier_clust(tdm)
-hier_clust(tdm, sparsity = 0.98)
-hier_clust(tdm, sparsity = 0.98, method = "ward.D")
 hier_clust(tdm, clusters = 5, sparsity = 0.98, method = "ward.D")
 }
 \arguments{

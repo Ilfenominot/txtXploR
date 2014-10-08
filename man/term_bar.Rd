@@ -3,8 +3,6 @@
 \alias{term_bar}
 \title{term_bar}
 \usage{
-term_bar(tdm)
-term_bar(tdm, term_freq = 1)
 term_bar(tdm, term_freq = 1, colour = "heat")
 }
 \arguments{

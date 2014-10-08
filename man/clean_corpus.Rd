@@ -3,9 +3,7 @@
 \alias{clean_corpus}
 \title{clean_corpus}
 \usage{
-clean_corpus(corpus)
-clean_corpus(corpus, stem=FALSE)
-clean_corpus(corpus, stem=FALSE, rem_words="the")
+clean_corpus(corpus, stem = FALSE, rem_words = "the")
 }
 \arguments{
 \item{corpus}{Required. Corpus of documents to clean.}
