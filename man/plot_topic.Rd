@@ -4,8 +4,8 @@
 \title{plot_topic}
 \usage{
 plot_topic(tdm, date)
-plot_topic(tdm, date, topics = 3)
-plot_topic(tdm, date, topics = 7, terms = 5)
+plot_topic(tdm, date, topics = 5)
+plot_topic(tdm, date, topics = 5, terms = 4)
 }
 \arguments{
 \item{tdm}{Required. term-document matri; must be of class "TermDocumentMatrix"}

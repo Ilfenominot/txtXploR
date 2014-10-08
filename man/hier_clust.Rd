@@ -4,9 +4,9 @@
 \title{hier_clust}
 \usage{
 hier_clust(tdm)
-hier_clust(tdm, sparsity = 0.95)
-hier_clust(tdm, sparsity = 0.99, method = "ward.D2")
-hier_clust(tdm, clusters = 4, sparsity = 0.98, method = "ward.D")
+hier_clust(tdm, sparsity = 0.98)
+hier_clust(tdm, sparsity = 0.98, method = "ward.D")
+hier_clust(tdm, clusters = 5, sparsity = 0.98, method = "ward.D")
 }
 \arguments{
 \item{tdm}{Required. Term-document matrix.}

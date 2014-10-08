@@ -4,8 +4,9 @@
 \title{term_network}
 \usage{
 term_network(tdm)
-term_network(tdm, sparsity = 0.99)
-term_network(tdm, weighted = FALSE, graphml = TRUE)
+term_network(tdm, sparsity = 0.98)
+term_network(tdm, sparsity = 0.98, weighted = TRUE)
+term_network(tdm, sparsity = 0.98, weighted = TRUE, graphml = FALSE)
 }
 \arguments{
 \item{tdm}{Required. Term-document matrix.}

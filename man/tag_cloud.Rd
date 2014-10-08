@@ -5,9 +5,9 @@
 \usage{
 tag_cloud(tdm)
 tag_cloud(tdm, min_freq = 1)
-tag_cloud(tdm, min_freq = 30, scale = c(4, .5))
-tag_cloud(tdm, min_freq = 150, scale = c(2, .3), order = FALSE)
-tag_cloud(tdm, min_freq = 150, scale = c(2, .3), order = FALSE, color = brewer.pal(8, 'Dark2'))
+tag_cloud(tdm, min_freq = 1, scale = c(4, .5))
+tag_cloud(tdm, min_freq = 1, scale = c(4, .5), order = FALSE)
+tag_cloud(tdm, min_freq = 1, scale = c(4, .5), order = FALSE, colour = brewer.pal(8, 'Dark2'))
 }
 \arguments{
 \item{tdm}{Required. Term-document matrix}

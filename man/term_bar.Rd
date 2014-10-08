@@ -4,8 +4,8 @@
 \title{term_bar}
 \usage{
 term_bar(tdm)
-term_bar(tdm, term_freq = 10)
-term_bar(tdm, term_freq = 25, colour = "blue")
+term_bar(tdm, term_freq = 1)
+term_bar(tdm, term_freq = 1, colour = "heat")
 }
 \arguments{
 \item{tdm}{Required. Object of class TermDocumentMatrix.}

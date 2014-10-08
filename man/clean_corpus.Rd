@@ -4,7 +4,7 @@
 \title{clean_corpus}
 \usage{
 clean_corpus(corpus)
-clean_corpus(corpus, stem=TRUE)
+clean_corpus(corpus, stem=FALSE)
 clean_corpus(corpus, stem=FALSE, rem_words="the")
 }
 \arguments{

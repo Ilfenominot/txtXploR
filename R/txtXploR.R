@@ -5,7 +5,7 @@
 #' 
 #' @usage
 #' clean_corpus(corpus)
-#' clean_corpus(corpus, stem=TRUE)
+#' clean_corpus(corpus, stem=FALSE)
 #' clean_corpus(corpus, stem=FALSE, rem_words="the")
 #' 
 #' @param corpus Required. Corpus of documents to clean.
@@ -74,9 +74,9 @@ clean_corpus <- function(corpus, stem = FALSE, rem_words="the") {
 #' 
 #' @usage
 #' hier_clust(tdm)
-#' hier_clust(tdm, sparsity = 0.95)
-#' hier_clust(tdm, sparsity = 0.99, method = "ward.D2")
-#' hier_clust(tdm, clusters = 4, sparsity = 0.98, method = "ward.D")
+#' hier_clust(tdm, sparsity = 0.98)
+#' hier_clust(tdm, sparsity = 0.98, method = "ward.D")
+#' hier_clust(tdm, clusters = 5, sparsity = 0.98, method = "ward.D")
 #' 
 #' @param tdm Required. Term-document matrix.
 #' @param clusters Optional. Number of clusters based on distance between terms, defaults to 5.
@@ -192,8 +192,8 @@ pam_k <- function(tdm, sparsity = 0.98) {
 #' @usage 
 #' 
 #' plot_topic(tdm, date)
-#' plot_topic(tdm, date, topics = 3)
-#' plot_topic(tdm, date, topics = 7, terms = 5)
+#' plot_topic(tdm, date, topics = 5)
+#' plot_topic(tdm, date, topics = 5, terms = 4)
 #' 
 #' @return Plots of topics over time (ggplot2)
 #' 
@@ -253,9 +253,9 @@ plot_topic <- function(tdm, date, topics = 5, terms = 4) {
 #' 
 #' tag_cloud(tdm)
 #' tag_cloud(tdm, min_freq = 1)
-#' tag_cloud(tdm, min_freq = 30, scale = c(4, .5))
-#' tag_cloud(tdm, min_freq = 150, scale = c(2, .3), order = FALSE)
-#' tag_cloud(tdm, min_freq = 150, scale = c(2, .3), order = FALSE, color = brewer.pal(8, 'Dark2'))
+#' tag_cloud(tdm, min_freq = 1, scale = c(4, .5))
+#' tag_cloud(tdm, min_freq = 1, scale = c(4, .5), order = FALSE)
+#' tag_cloud(tdm, min_freq = 1, scale = c(4, .5), order = FALSE, colour = brewer.pal(8, 'Dark2'))
 #' 
 #' @param tdm Required. Term-document matrix
 #' @param min_freq Optional, defaults to 1. Minimum frequency of term for it to appear in Wordcloud
@@ -302,8 +302,8 @@ tag_cloud <- function(tdm, min_freq = 1, scale = c(4, .5), order = FALSE,
 #' @usage
 #' 
 #' term_bar(tdm)
-#' term_bar(tdm, term_freq = 10)
-#' term_bar(tdm, term_freq = 25, colour = "blue")
+#' term_bar(tdm, term_freq = 1)
+#' term_bar(tdm, term_freq = 1, colour = "heat")
 #' 
 #' @param tdm Required. Object of class TermDocumentMatrix.
 #' @param term_freq Optional, defaults to 1. Minimum frequency of terms to plot
@@ -347,8 +347,9 @@ term_bar <- function(tdm, term_freq = 1, colour = "heat") {
 #' 
 #' @usage
 #' term_network(tdm)
-#' term_network(tdm, sparsity = 0.99)
-#' term_network(tdm, weighted = FALSE, graphml = TRUE)
+#' term_network(tdm, sparsity = 0.98)
+#' term_network(tdm, sparsity = 0.98, weighted = TRUE)
+#' term_network(tdm, sparsity = 0.98, weighted = TRUE, graphml = FALSE)
 #' 
 #' @param tdm Required. Term-document matrix.
 #' @param sparsity Optional. Maximum allowed sparsity. Between 0 and 1, defaults to 0.97.
@@ -408,34 +409,4 @@ term_network <- function(tdm, sparsity = 0.98, weighted = TRUE, graphml = FALSE)
     }
   } 
   return(g)
-}
-
-#' acc_fetch
-#' 
-#' @description 
-#' fetches table from Access database then closes connection
-#' 
-#' @usage
-#' acc_fetch(db, table)
-#' 
-#' @param db Required. Database location and name
-#' @param table Required. Name of the table
-#' 
-#' @return Chosen table from database
-#' 
-#' @examples
-#' 
-#' \dontrun{
-#' 
-#' library(RODBC)
-#' 
-#' table <- acc_fetch(db = "D:/my_database.accdb", table = "my_table")
-#' 
-#' }
-acc_fetch <- function(db, table) {
-  library(RODBC)
-  con <- odbcDriverConnect(paste("Driver={Microsoft Access Driver (*.mdb, *.accdb)};DBQ=", db, sep=""))
-  tb <- sqlFetch(con, table)
-  odbcClose(con)
-  return(tb)
 }
