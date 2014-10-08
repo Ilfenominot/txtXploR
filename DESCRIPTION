@@ -1,0 +1,21 @@
+Package: txtXploR
+Type: Package
+Title: txtXploR
+Name: txtXploR
+Version: 0.1
+Date: 2014-09-25
+Author: John Coene
+Maintainer: John Coene <jcoenep@gmail.com>
+LazyData: yes
+Description: Facilitates the use of popular tm package' functions. All
+    functions but one are executed at the term-document matrix level. Involves
+    very little data manipulation.
+Suggests:
+    tm,
+    topicmodels,
+    fpc,
+    igraph,
+    RODBC,
+    wordcloud,
+    ggplot2
+License: MIT
