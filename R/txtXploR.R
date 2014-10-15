@@ -49,7 +49,7 @@ clean_corpus <- function(corpus, stem = FALSE, rem_words="the") {
   corpus <- tm_map(corpus, function(x) gsub("@[^ ]*", "", x))
   corpus <- tm_map(corpus, removePunctuation)
   corpus <- tm_map(corpus, removeNumbers)
-  corpus <- tm_map(corpus, function(x) gsub('http[[:alnum:]]*', '', x))
+  corpus <- tm_map(corpus, function(x) gsub('http[[:alnum:][:punct:]]+', '', x))
   corpus <- tm_map(corpus, removeWords, c(stopwords(kind = 'en'), 'amp','via','and','for',
                                           'from', rem_words))
   corpus <- tm_map(corpus, PlainTextDocument) 
